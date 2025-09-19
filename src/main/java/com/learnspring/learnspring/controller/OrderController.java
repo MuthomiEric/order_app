@@ -5,6 +5,7 @@ import com.learnspring.learnspring.service.OrderService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/orders")
@@ -22,7 +23,7 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
-    public Order getOrderById(@PathVariable Long id) {
+    public Order getOrderById(@PathVariable UUID id) {
         return orderService.getOrderById(id);
     }
 
@@ -32,7 +33,7 @@ public class OrderController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteOrder(@PathVariable Long id) {
+    public void deleteOrder(@PathVariable UUID id) {
         orderService.deleteOrder(id);
     }
 }
